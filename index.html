@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بكجات — أفضل عروض الباقات في السعودية والخليج</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #1D9E75;
+  --green-dark: #0F6E56;
+  --green-light: #E1F5EE;
+  --green-mid: #5DCAA5;
+  --bg: #F7F8FA;
+  --bg2: #FFFFFF;
+  --bg3: #F0F2F5;
+  --text: #1A1A2E;
+  --text2: #5A5A72;
+  --text3: #9A9AB0;
+  --border: #E4E6EF;
+  --radius: 12px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.07);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Cairo', sans-serif; background: var(--bg); color: var(--text); font-size: 14px; }
+
+/* NAV */
+.nav {
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+.logo { font-size: 22px; font-weight: 700; color: var(--text); cursor: pointer; }
+.logo span { color: var(--green); }
+.nav-links { display: flex; gap: 24px; }
+.nav-links a { font-size: 13px; color: var(--text2); text-decoration: none; cursor: pointer; transition: color 0.2s; }
+.nav-links a:hover, .nav-links a.active { color: var(--green); }
+.nav-right { display: flex; gap: 8px; align-items: center; }
+.btn-outline { border: 1px solid var(--border); border-radius: 8px; padding: 7px 16px; font-size: 13px; background: transparent; color: var(--text2); cursor: pointer; font-family: 'Cairo', sans-serif; transition: all 0.2s; }
+.btn-solid { border: none; border-radius: 8px; padding: 7px 16px; font-size: 13px; background: var(--green); color: #fff; cursor: pointer; font-family: 'Cairo', sans-serif; font-weight: 600; transition: all 0.2s; }
+.btn-solid:hover { background: var(--green-dark); }
+.btn-outline:hover { border-color: var(--green); color: var(--green); }
+
+/* HERO */
+.hero {
+  background: linear-gradient(135deg, #0F6E56 0%, #1D9E75 50%, #2EC08D 100%);
+  padding: 48px 24px 40px;
+  text-align: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+}
+.hero h1 { font-size: 32px; font-weight: 700; margin-bottom: 10px; position: relative; }
+.hero p { font-size: 15px; opacity: 0.9; margin-bottom: 28px; position: relative; }
+.search-wrap { max-width: 620px; margin: 0 auto; position: relative; }
+.search-bar { display: flex; gap: 8px; background: #fff; border-radius: 12px; padding: 8px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); }
+.search-bar input { flex: 1; padding: 8px 12px; border: none; outline: none; font-size: 14px; font-family: 'Cairo', sans-serif; color: var(--text); background: transparent; }
+.search-bar select { padding: 8px 10px; border: none; outline: none; font-size: 13px; font-family: 'Cairo', sans-serif; color: var(--text2); background: var(--bg3); border-radius: 8px; cursor: pointer; }
+.search-bar button { padding: 8px 20px; background: var(--green); color: #fff; border: none; border-radius: 8px; font-size: 13px; font-family: 'Cairo', sans-serif; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.hero-stats { display: flex; gap: 32px; justify-content: center; margin-top: 28px; position: relative; }
+.hero-stat { text-align: center; }
+.hero-stat-val { font-size: 22px; font-weight: 700; }
+.hero-stat-lbl { font-size: 12px; opacity: 0.8; }
+
+/* STORES BAR */
+.stores-bar { background: var(--bg2); border-bottom: 1px solid var(--border); padding: 10px 24px; display: flex; gap: 10px; align-items: center; overflow-x: auto; }
+.stores-bar-lbl { font-size: 12px; color: var(--text3); white-space: nowrap; }
+.store-chip { font-size: 12px; font-weight: 600; color: var(--text2); background: var(--bg3); padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); white-space: nowrap; cursor: pointer; transition: all 0.2s; }
+.store-chip:hover { border-color: var(--green); color: var(--green); }
+
+/* CATS */
+.cats { background: var(--bg2); padding: 12px 24px; border-bottom: 1px solid var(--border); display: flex; gap: 8px; overflow-x: auto; }
+.cat { padding: 6px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 1px solid var(--border); background: transparent; color: var(--text2); white-space: nowrap; transition: all 0.2s; font-family: 'Cairo', sans-serif; }
+.cat:hover { border-color: var(--green); color: var(--green); }
+.cat.active { background: var(--green-light); color: var(--green-dark); border-color: var(--green-mid); font-weight: 600; }
+
+/* MAIN */
+.main { display: flex; gap: 16px; padding: 20px 24px; max-width: 1200px; margin: 0 auto; }
+
+/* SIDEBAR */
+.sidebar { width: 220px; flex-shrink: 0; }
+.sb-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px; margin-bottom: 12px; }
+.sb-card h3 { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 10px; padding-bottom: 8px; border-bottom: 1px solid var(--border); }
+.fi { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; cursor: pointer; }
+.fi input { accent-color: var(--green); cursor: pointer; }
+.fi label { font-size: 13px; color: var(--text2); cursor: pointer; flex: 1; }
+.fi span { font-size: 11px; color: var(--text3); }
+
+/* CONTENT */
+.content { flex: 1; min-width: 0; }
+.content-hdr { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.content-hdr span { font-size: 14px; font-weight: 600; color: var(--text); }
+.sort-select { padding: 6px 10px; border: 1px solid var(--border); border-radius: 8px; font-size: 12px; font-family: 'Cairo', sans-serif; background: var(--bg2); color: var(--text2); cursor: pointer; }
+
+/* BANNER */
+.banner { background: linear-gradient(135deg, var(--green-light), #C5EDE0); border: 1px solid var(--green-mid); border-radius: var(--radius); padding: 14px 18px; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: center; }
+.banner-text p:first-child { font-size: 14px; color: var(--green-dark); font-weight: 700; }
+.banner-text p:last-child { font-size: 12px; color: var(--green); margin-top: 3px; }
+.banner-icon { font-size: 28px; }
+
+/* DEALS GRID */
+.deals-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; }
+.deal-card { background: var(--bg2); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; cursor: pointer; transition: all 0.2s; }
+.deal-card:hover { border-color: var(--green-mid); box-shadow: 0 4px 20px rgba(29,158,117,0.12); transform: translateY(-2px); }
+.deal-img { height: 100px; display: flex; align-items: center; justify-content: center; font-size: 36px; background: var(--bg3); }
+.deal-body { padding: 10px 12px; }
+.deal-store { font-size: 11px; color: var(--text3); margin-bottom: 3px; }
+.deal-title { font-size: 13px; color: var(--text); font-weight: 600; margin-bottom: 7px; line-height: 1.4; }
+.deal-prices { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.deal-new { font-size: 16px; font-weight: 700; color: var(--green-dark); }
+.deal-old { font-size: 12px; color: var(--text3); text-decoration: line-through; }
+.deal-disc { font-size: 11px; background: var(--green-light); color: var(--green-dark); padding: 2px 7px; border-radius: 8px; font-weight: 600; }
+.deal-foot { display: flex; align-items: center; justify-content: space-between; }
+.deal-country { font-size: 11px; color: var(--text3); }
+.deal-btn { font-size: 12px; padding: 5px 12px; background: var(--green); color: #fff; border: none; border-radius: 7px; cursor: pointer; font-family: 'Cairo', sans-serif; font-weight: 600; transition: background 0.2s; }
+.deal-btn:hover { background: var(--green-dark); }
+
+/* DEAL DETAIL PAGE */
+.detail-page { padding: 20px 24px; max-width: 1000px; margin: 0 auto; display: none; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text2); cursor: pointer; margin-bottom: 20px; padding: 7px 14px; border: 1px solid var(--border); border-radius: 8px; background: var(--bg2); transition: all 0.2s; }
+.back-btn:hover { border-color: var(--green); color: var(--green); }
+.deal-detail-card { background: var(--bg2); border: 1px solid var(--border); border-radius: 16px; padding: 24px; display: flex; gap: 24px; margin-bottom: 24px; }
+.deal-img-big { width: 180px; height: 180px; background: var(--bg3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 64px; flex-shrink: 0; }
+.deal-info h2 { font-size: 20px; font-weight: 700; margin-bottom: 6px; }
+.deal-store-tag { font-size: 13px; color: var(--text3); margin-bottom: 16px; }
+.big-prices { display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; flex-wrap: wrap; }
+.big-new { font-size: 30px; font-weight: 700; color: var(--green-dark); }
+.big-old { font-size: 16px; color: var(--text3); text-decoration: line-through; }
+.big-disc { font-size: 14px; background: var(--green-light); color: var(--green-dark); padding: 4px 12px; border-radius: 8px; font-weight: 700; }
+.meta-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+.meta-tag { font-size: 12px; padding: 4px 12px; border-radius: 8px; border: 1px solid var(--border); color: var(--text2); background: var(--bg3); }
+.go-btn { background: var(--green); color: #fff; border: none; border-radius: 10px; padding: 12px 28px; font-size: 14px; font-family: 'Cairo', sans-serif; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+.go-btn:hover { background: var(--green-dark); }
+
+/* FOOTER */
+footer { background: var(--text); color: rgba(255,255,255,0.7); text-align: center; padding: 20px; font-size: 12px; margin-top: 40px; }
+footer span { color: var(--green-mid); }
+
+/* EMPTY */
+.empty { text-align: center; padding: 40px; color: var(--text3); }
+.empty-icon { font-size: 40px; margin-bottom: 10px; }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .nav-links { display: none; }
+  .hero h1 { font-size: 22px; }
+  .hero-stats { gap: 16px; }
+  .deals-grid { grid-template-columns: repeat(2, 1fr); }
+  .deal-detail-card { flex-direction: column; }
+  .deal-img-big { width: 100%; height: 140px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="logo" onclick="showHome()">بكجات<span>.</span></div>
+  <div class="nav-links">
+    <a class="active" onclick="showHome()">الرئيسية</a>
+    <a onclick="filterCat('سفر', null)">سفر وفنادق</a>
+    <a onclick="filterCat('إلكترونيات', null)">إلكترونيات</a>
+    <a onclick="filterCat('تخييم', null)">تخييم</a>
+    <a>تنبيهات الأسعار</a>
+  </div>
+  <div class="nav-right">
+    <button class="btn-outline">دخول</button>
+    <button class="btn-solid">تسجيل مجاني</button>
+  </div>
+</nav>
+
+<!-- HOME PAGE -->
+<div id="home-page">
+
+  <!-- HERO -->
+  <div class="hero">
+    <h1>أفضل عروض الباقات في السعودية والخليج</h1>
+    <p>نجمع لك أحدث العروض من أكبر المتاجر — كل شيء في مكان واحد</p>
+    <div class="search-wrap">
+      <div class="search-bar">
+        <input type="text" id="search-input" placeholder="ابحث عن منتج أو باقة أو متجر..." oninput="renderDeals()" />
+        <select id="country-filter" onchange="renderDeals()">
+          <option value="">كل الدول</option>
+          <option value="🇸🇦">السعودية</option>
+          <option value="🇦🇪">الإمارات</option>
+          <option value="🇰🇼">الكويت</option>
+          <option value="🇶🇦">قطر</option>
+        </select>
+        <button onclick="renderDeals()">بحث</button>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="hero-stat-val">٦٣٢+</div><div class="hero-stat-lbl">عرض نشط</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">١٨</div><div class="hero-stat-lbl">متجر مشارك</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">٥</div><div class="hero-stat-lbl">دول خليجية</div></div>
+      <div class="hero-stat"><div class="hero-stat-val">٨٠٪</div><div class="hero-stat-lbl">أعلى خصم</div></div>
+    </div>
+  </div>
+
+  <!-- STORES BAR -->
+  <div class="stores-bar">
+    <span class="stores-bar-lbl">المتاجر:</span>
+    <div class="store-chip">نون</div>
+    <div class="store-chip">أمازون</div>
+    <div class="store-chip">جرير</div>
+    <div class="store-chip">extra</div>
+    <div class="store-chip">شي إن</div>
+    <div class="store-chip">هنقرستيشن</div>
+  </div>
+
+  <!-- CATS -->
+  <div class="cats">
+    <button class="cat active" onclick="filterCat('', this)">الكل</button>
+    <button class="cat" onclick="filterCat('إلكترونيات', this)">📱 إلكترونيات</button>
+    <button class="cat" onclick="filterCat('ملابس', this)">👗 ملابس وأزياء</button>
+    <button class="cat" onclick="filterCat('طعام', this)">🍔 طعام ومطاعم</button>
+    <button class="cat" onclick="filterCat('سفر', this)">✈️ سفر وفنادق</button>
+    <button class="cat" onclick="filterCat('تخييم', this)">🏕️ تخييم ورحلات</button>
+    <button class="cat" onclick="filterCat('عطور', this)">🌸 عطور</button>
+    <button class="cat" onclick="filterCat('أدوات', this)">🔧 أدوات ومعدات</button>
+    <button class="cat" onclick="filterCat('طبخ', this)">🍳 طبخ ومطبخ</button>
+  </div>
+
+  <!-- MAIN LAYOUT -->
+  <div class="main">
+    <div class="sidebar">
+      <div class="sb-card">
+        <h3>الدولة</h3>
+        <div class="fi"><input type="checkbox" checked onchange="renderDeals()"><label>🇸🇦 السعودية</label><span>٢٤٠</span></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>🇦🇪 الإمارات</label><span>١٨٠</span></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>🇰🇼 الكويت</label><span>٩٥</span></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>🇶🇦 قطر</label><span>٧٠</span></div>
+      </div>
+      <div class="sb-card">
+        <h3>نسبة الخصم</h3>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>أكثر من ٧٠٪</label></div>
+        <div class="fi"><input type="checkbox" checked onchange="renderDeals()"><label>٥٠٪ — ٧٠٪</label></div>
+        <div class="fi"><input type="checkbox" checked onchange="renderDeals()"><label>٣٠٪ — ٥٠٪</label></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>أقل من ٣٠٪</label></div>
+      </div>
+      <div class="sb-card">
+        <h3>المتجر</h3>
+        <div class="fi"><input type="checkbox" checked onchange="renderDeals()"><label>نون</label></div>
+        <div class="fi"><input type="checkbox" checked onchange="renderDeals()"><label>أمازون</label></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>جرير</label></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>extra</label></div>
+        <div class="fi"><input type="checkbox" onchange="renderDeals()"><label>شي إن</label></div>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="banner">
+        <div class="banner-text">
+          <p>🔥 عروض اليوم الوطني — آخر ٦ ساعات</p>
+          <p>خصومات تصل إلى ٨٠٪ على آلاف المنتجات</p>
+        </div>
+        <div class="banner-icon">🔥</div>
+      </div>
+      <div class="content-hdr">
+        <span id="deals-count">جميع العروض</span>
+        <select class="sort-select" onchange="sortDeals(this.value)">
+          <option value="disc">الأعلى خصماً</option>
+          <option value="new">الأحدث</option>
+          <option value="price">الأقل سعراً</option>
+        </select>
+      </div>
+      <div class="deals-grid" id="deals-grid"></div>
+    </div>
+  </div>
+</div>
+
+<!-- DEAL DETAIL PAGE -->
+<div class="detail-page" id="detail-page">
+  <div class="back-btn" onclick="showHome()">← العودة للعروض</div>
+  <div id="detail-content"></div>
+  <h3 style="margin-bottom:12px;font-size:15px;">عروض مشابهة</h3>
+  <div class="deals-grid" id="related-grid"></div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© ٢٠٢٦ <span>بكجات</span> — جميع الحقوق محفوظة | bakegat.com</p>
+  <p style="margin-top:6px;">السعودية · الإمارات · الكويت · قطر · البحرين</p>
+</footer>
+
+<script>
+var deals = [
+  {id:1, title:'سامسونج جالكسي S24 — باقة مع سماعات', store:'نون', cat:'إلكترونيات', country:'🇸🇦', icon:'📱', old:4299, price:2999, disc:30, desc:'باقة شاملة تتضمن هاتف سامسونج S24 مع سماعات Galaxy Buds2 Pro. ضمان سنة كاملة.'},
+  {id:4, title:'باقة عباءات رمضان — ٣ قطع فاخرة', store:'شي إن', cat:'ملابس', country:'🇸🇦', icon:'👗', old:450, price:199, disc:56, desc:'باقة تضم ٣ عباءات رمضانية فاخرة بتصاميم مختلفة. مصنوعة من أجود أنواع القماش.'},
+  {id:5, title:'وجبة عائلية كبيرة — ٤ أشخاص', store:'هنقرستيشن', cat:'طعام', country:'🇦🇪', icon:'🍔', old:210, price:129, disc:38, desc:'وجبة عائلية تكفي ٤ أشخاص تشمل برغر، بطاطا، مشروبات وحلوى.'},
+  {id:6, title:'باقة عطور نسائية — ٣ عطور فاخرة', store:'باث أند بودي', cat:'عطور', country:'🇶🇦', icon:'🌸', old:680, price:349, disc:49, desc:'باقة تضم ٣ عطور نسائية فاخرة من أشهر دور العطور العالمية.'},
+  {id:7, title:'طقم أدوات يدوية احترافي — ١٢٠ قطعة', store:'جرير', cat:'أدوات', country:'🇸🇦', icon:'🔧', old:850, price:499, disc:41, desc:'طقم أدوات يدوية احترافي يضم ١٢٠ قطعة بحقيبة حمل مريحة.'},
+  {id:8, title:'طقم مطبخ فاخر — ١٠ قطع', store:'إيكيا', cat:'طبخ', country:'🇸🇦', icon:'🍳', old:600, price:320, disc:47, desc:'طقم مطبخ فاخر يشمل ١٠ قطع من الأواني والمقالي بتصميم أنيق.'},
+  {id:9, title:'آيفون 15 Pro — ٢٥٦ جيجا', store:'أمازون', cat:'إلكترونيات', country:'🇸🇦', icon:'📱', old:5499, price:3999, disc:27, desc:'آيفون 15 Pro بسعة ٢٥٦ جيجا بضمان سنة كاملة وشاحن أصلي.'},
+  {id:12, title:'عطر عود ملكي — ١٠٠ مل', store:'عطور العالم', cat:'عطور', country:'🇸🇦', icon:'🌸', old:420, price:220, disc:48, desc:'عطر عود ملكي أصيل من مزيج روائح عربية فاخرة.'},
+];
+
+var activeCat = '';
+var currentDeals = [...deals];
+
+function toAr(n) { return n.toLocaleString('ar-SA'); }
+
+function renderDealCard(d) {
+  return '<div class="deal-card" onclick="openDeal('+d.id+')">'
+    +'<div class="deal-img">'+d.icon+'</div>'
+    +'<div class="deal-body">'
+    +'<div class="deal-store">'+d.store+' · '+d.country+'</div>'
+    +'<div class="deal-title">'+d.title+'</div>'
+    +'<div class="deal-prices">'
+    +'<span class="deal-new">'+toAr(d.price)+' ر.س</span>'
+    +'<span class="deal-old">'+toAr(d.old)+'</span>'
+    +'<span class="deal-disc">-'+d.disc+'٪</span>'
+    +'</div>'
+    +'<div class="deal-foot">'
+    +'<span class="deal-country">'+d.country+'</span>'
+    +'<button class="deal-btn" onclick="event.stopPropagation();openDeal('+d.id+')">اطّلع على العرض</button>'
+    +'</div>'
+    +'</div></div>';
+}
+
+function renderDeals() {
+  var q = (document.getElementById('search-input')||{}).value||'';
+  var country = (document.getElementById('country-filter')||{}).value||'';
+  var filtered = currentDeals.filter(function(d) {
+    var matchQ = !q || d.title.includes(q) || d.store.includes(q);
+    var matchC = !country || d.country === country;
+    return matchQ && matchC;
+  });
+  var grid = document.getElementById('deals-grid');
+  if (grid) {
+    grid.innerHTML = filtered.length
+      ? filtered.map(renderDealCard).join('')
+      : '<div class="empty"><div class="empty-icon">🔍</div><p>لا توجد عروض مطابقة</p></div>';
+    document.getElementById('deals-count').textContent = toAr(filtered.length) + ' عرض متاح';
+  }
+}
+
+function filterCat(cat, el) {
+  activeCat = cat;
+  document.querySelectorAll('.cat').forEach(function(c){ c.classList.remove('active'); });
+  if (el) el.classList.add('active');
+  currentDeals = cat ? deals.filter(function(d){ return d.cat.includes(cat); }) : [...deals];
+  renderDeals();
+}
+
+function sortDeals(v) {
+  if (v === 'disc') currentDeals.sort(function(a,b){ return b.disc - a.disc; });
+  else if (v === 'price') currentDeals.sort(function(a,b){ return a.price - b.price; });
+  else currentDeals.sort(function(a,b){ return b.id - a.id; });
+  renderDeals();
+}
+
+function openDeal(id) {
+  var d = deals.find(function(x){ return x.id === id; });
+  if (!d) return;
+  document.getElementById('detail-content').innerHTML =
+    '<div class="deal-detail-card">'
+    +'<div class="deal-img-big">'+d.icon+'</div>'
+    +'<div class="deal-info">'
+    +'<h2>'+d.title+'</h2>'
+    +'<div class="deal-store-tag">'+d.store+' · '+d.country+' · '+d.cat+'</div>'
+    +'<div class="big-prices">'
+    +'<span class="big-new">'+toAr(d.price)+' ر.س</span>'
+    +'<span class="big-old">'+toAr(d.old)+' ر.س</span>'
+    +'<span class="big-disc">خصم '+d.disc+'٪</span>'
+    +'</div>'
+    +'<div class="meta-tags">'
+    +'<span class="meta-tag">'+d.cat+'</span>'
+    +'<span class="meta-tag">'+d.country+'</span>'
+    +'<span class="meta-tag">'+d.store+'</span>'
+    +'<span class="meta-tag">توفير: '+toAr(d.old-d.price)+' ر.س</span>'
+    +'</div>'
+    +'<p style="font-size:13px;color:var(--text2);margin-bottom:20px;line-height:1.7">'+d.desc+'</p>'
+    +'<button class="go-btn">الانتقال للعرض ←</button>'
+    +'</div></div>';
+  var related = deals.filter(function(x){ return x.id !== id && x.cat === d.cat; }).slice(0,4);
+  document.getElementById('related-grid').innerHTML = related.map(renderDealCard).join('');
+  document.getElementById('home-page').style.display = 'none';
+  document.getElementById('detail-page').style.display = 'block';
+  window.scrollTo(0, 0);
+}
+
+function showHome() {
+  document.getElementById('home-page').style.display = 'block';
+  document.getElementById('detail-page').style.display = 'none';
+  renderDeals();
+}
+
+renderDeals();
+</script>
+</body>
+</html>
